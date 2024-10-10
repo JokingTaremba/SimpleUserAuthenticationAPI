@@ -1,9 +1,10 @@
-package com.jokingwill.SimpleUserAuthenticationAPI.dto;
+package com.jokingwill.SimpleUserAuthenticationAPI.dto.requestDto;
+
 
 import lombok.Data;
 
 @Data
-public class UserRequestDto {
+public class CreateUserDto {
 
     private String username;
     private String email;

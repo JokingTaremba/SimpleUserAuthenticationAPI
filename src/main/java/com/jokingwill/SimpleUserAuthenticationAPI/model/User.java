@@ -1,16 +1,12 @@
 package com.jokingwill.SimpleUserAuthenticationAPI.model;
-
+import com.jokingwill.SimpleUserAuthenticationAPI.model.enums.UserRole;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
-import java.time.LocalDateTime;
+import lombok.*;
 
 @Entity
 @Getter
 @Setter
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 
@@ -20,13 +16,12 @@ public class User {
     @Id
     @GeneratedValue( strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(nullable = false)
     private String username;
-    @Column(nullable = false, unique = true)
     private String email;
-    @Column(nullable = false)
     private String password;
-    private LocalDateTime created_at;
-    private LocalDateTime updated_at;
+
+    @Enumerated(EnumType.STRING)
+    private UserRole role;
+
 
 }
