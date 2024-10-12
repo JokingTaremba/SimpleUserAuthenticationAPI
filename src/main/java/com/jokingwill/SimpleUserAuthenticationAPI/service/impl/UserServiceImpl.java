@@ -1,5 +1,6 @@
 package com.jokingwill.SimpleUserAuthenticationAPI.service.impl;
 import com.jokingwill.SimpleUserAuthenticationAPI.exception.BadRequestException;
+import com.jokingwill.SimpleUserAuthenticationAPI.exception.EntityNotFoundException;
 import com.jokingwill.SimpleUserAuthenticationAPI.model.User;
 import com.jokingwill.SimpleUserAuthenticationAPI.model.enums.UserRole;
 import com.jokingwill.SimpleUserAuthenticationAPI.repository.UserRepository;
@@ -7,6 +8,8 @@ import com.jokingwill.SimpleUserAuthenticationAPI.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -24,6 +27,17 @@ public class UserServiceImpl implements UserService {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         userRepository.save(user);
         return "Usuário criado com sucesso!";
+    }
+
+    @Override
+    public List<User> getAllUsers() {
+            return userRepository.findAll();
+    }
+
+    @Override
+    public User getUserById(Long id) {
+        return userRepository.findById(id).orElseThrow(() ->
+                new EntityNotFoundException("Cidadão não encontrado!"));
     }
 
 }
