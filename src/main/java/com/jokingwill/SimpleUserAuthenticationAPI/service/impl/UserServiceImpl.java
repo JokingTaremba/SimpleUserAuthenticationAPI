@@ -8,6 +8,7 @@ import com.jokingwill.SimpleUserAuthenticationAPI.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -30,14 +31,16 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    @Transactional
     public List<User> getAllUsers() {
             return userRepository.findAll();
     }
 
     @Override
+    @Transactional(readOnly = true)
     public User getUserById(Long id) {
         return userRepository.findById(id).orElseThrow(() ->
-                new EntityNotFoundException("Cidadão não encontrado!"));
+                new EntityNotFoundException("Usuário não encontrado!"));
     }
 
 }
