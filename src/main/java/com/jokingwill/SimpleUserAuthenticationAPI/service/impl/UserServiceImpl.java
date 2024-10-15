@@ -1,6 +1,6 @@
 package com.jokingwill.SimpleUserAuthenticationAPI.service.impl;
-import com.jokingwill.SimpleUserAuthenticationAPI.exception.BadRequestException;
-import com.jokingwill.SimpleUserAuthenticationAPI.exception.EntityNotFoundException;
+import com.jokingwill.SimpleUserAuthenticationAPI.exception.handlers.BadRequestException;
+import com.jokingwill.SimpleUserAuthenticationAPI.exception.handlers.EntityNotFoundException;
 import com.jokingwill.SimpleUserAuthenticationAPI.model.User;
 import com.jokingwill.SimpleUserAuthenticationAPI.model.enums.UserRole;
 import com.jokingwill.SimpleUserAuthenticationAPI.repository.UserRepository;

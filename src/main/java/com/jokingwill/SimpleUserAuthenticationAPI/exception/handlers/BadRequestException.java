@@ -1,4 +1,4 @@
-package com.jokingwill.SimpleUserAuthenticationAPI.exception;
+package com.jokingwill.SimpleUserAuthenticationAPI.exception.handlers;
 
 public class BadRequestException extends RuntimeException{
 

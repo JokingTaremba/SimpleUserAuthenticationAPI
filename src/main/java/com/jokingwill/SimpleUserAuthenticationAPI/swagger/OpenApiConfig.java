@@ -11,7 +11,7 @@ import io.swagger.v3.oas.annotations.security.SecurityScheme;
 
 @OpenAPIDefinition(
         info = @Info(
-                title = "SimpleUserAuthenticationApi",
+                title = "Simple User Authentication API",
                 description = "Uma API que permite o registro e a autenticação de usuários, desenvolvida com base em um dos desafios da plataforma Onit",
                 version = "1.0",
                 contact = @Contact(

@@ -1,5 +1,6 @@
-package com.jokingwill.SimpleUserAuthenticationAPI.exception;
+package com.jokingwill.SimpleUserAuthenticationAPI.exception.handlers;
 
+import com.jokingwill.SimpleUserAuthenticationAPI.exception.StandardErrorResponse;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.MessageSource;
