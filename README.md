@@ -29,12 +29,12 @@ Ensure you have the following tools installed:
 
 ### Configuration Steps
 
-1. **Clone the repository**: To clone the repository, use o seguinte comando:
+1. **Clone the repository**: To clone the repository, use the following command:
    ```bash
    git clone git@github.com:JokingTaremba/SimpleUserAuthenticationAPI.git
    cd SimpleUserAuthenticationAPI
 
-2. **Configure the application.properties**: Edit the application.properties file com suas credenciais:
+2. **Configure the application.properties**: Edit the application.properties file with your credentials::
    ```bash
    spring.datasource.url=jdbc:postgresql://localhost:5432/your_database_name
    spring.datasource.username=your_username
